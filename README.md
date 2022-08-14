@@ -30,20 +30,30 @@
 
 ```bash
 $ npm install
+$ cp .env.example .env
 ```
 
-## Running the app
+## Running the app using node server (the normal way)
 
 ```bash
 # development
 $ npm run start
 
-# watch mode
+# watch mode (hot reload)
 $ npm run start:dev
 
 # production mode
+$ npm run build
 $ npm run start:prod
 ```
+
+## Using Docker Compose
+```sh
+# Build the docker image
+$ docker-compose build
+
+# Start the container
+$ docker-compose up
 
 ## Test
 
