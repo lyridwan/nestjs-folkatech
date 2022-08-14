@@ -11,6 +11,7 @@ import * as redisStore from 'cache-manager-redis-store';
         store: redisStore,
         host: configService.get('redis.host'),
         port: configService.get('redis.port'),
+        ttl: 600,
       }),
     }),
   ],

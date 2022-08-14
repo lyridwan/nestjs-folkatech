@@ -20,11 +20,9 @@ async function bootstrap() {
   const swaggerDescription = `
   Paginations Meta Response:\n
   \`data.items\`: An array of SomeEntity\n
-  \`meta.itemCount\`: The length of items array (i.e., the amount of items on this page)\n
-  \`meta.totalItems\`: The total amount of SomeEntity matching the filter conditions\n
-  \`meta.itemsPerPage\`: The requested items per page (i.e., the \`limit\` parameter)\n
-  \`meta.totalPages\`: The total amount of pages (based on the \`limit\`)\n
-  \`meta.currentPage\`: The current page this paginator "points" to\n`;
+  \`meta.page\`: The current page this paginator "points" to\n
+  \`meta.limit\`: The requested items per page (i.e., the \`limit\` parameter)\n
+  \`meta.count\`: The total amount of SomeEntity matching the filter conditions\n`;
 
   /** Swagger configuration*/
   const options = new DocumentBuilder()

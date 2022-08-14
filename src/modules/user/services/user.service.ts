@@ -40,10 +40,20 @@ export class UserService {
     return { items, count };
   }
 
-  async findOne(ctx: RequestContext, id: string): Promise<UserDocument> {
-    this.logger.log(ctx, `${this.findOne.name} was called`);
+  async findByAccountNumber(ctx: RequestContext, accountNumber: string): Promise<UserDocument> {
+    this.logger.log(ctx, `${this.findByAccountNumber.name} was called`);
 
-    const user = await this.userModel.findById(id).exec();
+    const user = await this.userModel.findOne({ accountNumber }).exec();
+    if (!user) throw new NotFoundException('User not found');
+
+    return user;
+  }
+
+  async findByIdentityNumber(ctx: RequestContext, identityNumber: string): Promise<UserDocument> {
+    this.logger.log(ctx, `${this.findByIdentityNumber.name} was called`);
+
+    const user = await this.userModel.findOne({ identityNumber }).exec();
+    if (!user) throw new NotFoundException('User not found');
 
     return user;
   }

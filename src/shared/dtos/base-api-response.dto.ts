@@ -40,19 +40,13 @@ class PaginationItems<T> {
 
 class Pagination {
   @ApiProperty()
-  public itemCount: number;
+  public page: number;
 
   @ApiProperty()
-  public totalItems: number;
+  public limit: number;
 
   @ApiProperty()
-  public itemsPerPage: number;
-
-  @ApiProperty()
-  public totalPages: number;
-
-  @ApiProperty()
-  public currentPage: number;
+  public count: number;
 }
 
 export class PaginationApiResponse<T> {
