@@ -6,6 +6,10 @@
 - Default User: `admin@default.com` 
 - Default Password: `admin`
 
+## Project Structure
+1. `src/modules` folder contains API-related files (controllers, service, dtos, entities, etc)
+2. `src/shared` folder contains Project-related files (config, caching, logging, global request/response handler, etc)
+
 ## Task Completed
 - Create microseservices (nodejs) for CRUD operation and store in database (mongodb) for user data
 - Protect the API with the authorization header
