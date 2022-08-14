@@ -20,7 +20,7 @@ services:
       - /usr/src/app/node_modules
     restart: unless-stopped
   mongodb:
-    image : mongo:latest
+    image: mongo:latest
     container_name: mongodb
     ports:
       - 27017:27017
@@ -28,7 +28,7 @@ services:
       - nest-network
     restart: always
   redis:
-    image : redis:latest
+    image: redis:latest
     container_name: redis
     ports:
       - 6379:6379
@@ -36,5 +36,5 @@ services:
       - nest-network
     restart: always
 networks:
-    nest-network:
-      driver: bridge
+  nest-network:
+    driver: bridge

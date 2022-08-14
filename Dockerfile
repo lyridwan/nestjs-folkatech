@@ -17,10 +17,21 @@ RUN npm ci
 
 # Bundle app source
 COPY --chown=node:node . .
-COPY --chown=node:node .env.example ./.env
 
 # Use the node user from the image (instead of the root user)
 USER node
+
+# Set NODE_ENV environment variable
+ENV APP_ENV development
+ENV APP_PORT 3000
+ENV MONGODB_URI mongodb://mongodb:27017/muhammad-ridwan
+ENV JWT_ACCESS_TOKEN_EXP_IN_SEC 3600
+ENV JWT_REFRESH_TOKEN_EXP_IN_SEC 7200
+ENV JWT_SECRET ask_your_tech_lead
+ENV REDIST_HOST redis
+ENV REDIST_PORT 6379
+ENV DEFAULT_ADMIN_USER admin@default.com
+ENV DEFAULT_ADMIN_PASSWORD admin
 
 ###################
 # BUILD FOR PRODUCTION
